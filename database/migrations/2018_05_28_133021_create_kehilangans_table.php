@@ -16,9 +16,9 @@ class CreateKehilangansTable extends Migration
         Schema::create('kehilangans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_barang');
-            $table->integer('tgl_hilang');
+            $table->string('tgl_hilang');
             $table->string('jenis_barang');
-            $table->integer('nomor_pemilik');
+            $table->string('nomor_pemilik');
             $table->string('ciri-ciri_unik');
             $table->text('deskripsi');
             $table->timestamps();
