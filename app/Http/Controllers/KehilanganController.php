@@ -38,7 +38,9 @@ class KehilanganController extends Controller
     {
         $kehilangan = new \App\Kehilangan;
         $kehilangan->nama_barang = $request->get('nama_barang');
-        $kehilangan->tgl_hilang = $request->get('tgl_hilang');
+        $date=date_create($request->get('tgl_hilang'));
+        $format = date_format($date,"d-m-Y");
+        $kehilangan->tgl_hilang = strtotime($format);
         $kehilangan->jenis_barang = $request->get('jenis_barang');
         $kehilangan->nomor_pemilik = $request->get('nomor_pemilik');
         $kehilangan->ciri_ciri_unik = $request->get('ciri_ciri_unik');
@@ -82,7 +84,9 @@ class KehilanganController extends Controller
     {
         $kehilangan = \App\Kehilangan::find($id);
         $kehilangan->nama_barang = $request->get('nama_barang');
-        $kehilangan->tgl_hilang = $request->get('tgl_hilang');
+        $date=date_create($request->get('tgl_hilang'));
+        $format = date_format($date,"d-m-Y");
+        $kehilangan->tgl_hilang = strtotime($format);
         $kehilangan->jenis_barang = $request->get('jenis_barang');
         $kehilangan->nomor_pemilik = $request->get('nomor_pemilik');
         $kehilangan->ciri_ciri_unik = $request->get('ciri_ciri_unik');

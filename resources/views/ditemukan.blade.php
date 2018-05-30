@@ -17,9 +17,9 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Barang barang Hilang</h3>
+              <h3 class="card-title">Barang Ditemukan</h3>
             </div>
-            <button onclick="location.href='{{url('kehilangan/create')}}'" class="btn btn-primary" >Buat Formulir Kehilangan</button>
+            <button onclick="location.href='{{url('ditemukan/create')}}'" class="btn btn-primary" >Buat Formulir Penemuan Barang</button>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -27,31 +27,35 @@
               		<tr>
               			<th>ID</th>
               			<th>Nama Barang</th>
-              			<th>Tanggal Hilang</th>
+              			<th>Tanggal Ditemukan</th>
               			<th>Jenis Barang</th>
-              			<th>Nomor Pemilik</th>
-              			<th>ciri ciri unik</th>
-              			<th>deskripsi</th>
+              			<th>Nomor Penemu</th>
+              			<th>Lokasi Penemuan</th>
+              			<th>Ciri-ciri unik</th>
+                    <th>Gambar</th>
+                    <th>Deskripsi Barang yang ditemukan</th>
                     <th></th>
                     <th></th>
               		</tr>
               	</thead>
               	<tbody>
-              		@foreach($kehilangans as $kehilangan)
+              		@foreach($ditemukans as $ditemukan)
               		@php
-                    $tgl_hilang=date('d-m-Y', $kehilangan['tgl_hilang']);
+                    $tgl_ditemukan=date('d-m-Y', $ditemukan['tgl_ditemukan']);
                   @endphp
               	<tr>
-              		<td>{{$kehilangan['id']}}</td>
-              		<td>{{$kehilangan['nama_barang']}}</td>
-              		<td>{{$tgl_hilang}}</td>
-              		<td>{{$kehilangan['jenis_barang']}}</td>
-              		<td>{{$kehilangan['nomor_pemilik']}}</td>
-              		<td>{{$kehilangan['ciri_ciri_unik']}}</td>
-              		<td>{{$kehilangan['deskripsi']}}</td>
-              		<td><a href="{{action('KehilanganController@edit', $kehilangan['id'])}}" class="btn btn-warning">Edit</a></td>
+              		<td>{{$ditemukan['id']}}</td>
+              		<td>{{$ditemukan['nama_barang']}}</td>
+              		<td>{{$tgl_ditemukan}}</td>
+              		<td>{{$ditemukan['jenis_barang']}}</td>
+              		<td>{{$ditemukan['nomor_penemu']}}</td>
+                  <td>{{$ditemukan['lokasi_ditemukan']}}</td>
+              		<td>{{$ditemukan['ciri_ciri_unik']}}</td>
+                  <td><img src="{{url('images/', $ditemukan['file_gambar'])}}" width="10%" height="10%"></td>
+              		<td>{{$ditemukan['deskripsi']}}</td>
+              		<td><a href="{{action('DitemukanController@edit', $ditemukan['id'])}}" class="btn btn-warning">Edit</a></td>
               		<td>
-          				<form action="{{action('KehilanganController@destroy', $kehilangan['id'])}}" method="post">
+          				<form action="{{action('DitemukanController@destroy', $ditemukan['id'])}}" method="post">
             			@csrf
            					<input name="_method" type="hidden" value="DELETE">
             				<button class="btn btn-danger" type="submit">Delete</button>
