@@ -22,7 +22,7 @@
     	   <div class="form-group">
     		<label>Jenis Barang Hilang</label>
     		<select class="form-control" name="jenis_barang">
-    			<option value="Dompet + isi @if($ditemukan->jenis_barang == "Dompet + isi") selected @endif ">Dompet + isi</option>
+    			<option value="Dompet + isi" @if($ditemukan->jenis_barang == "Dompet + isi") selected @endif >Dompet + isi</option>
     			<option value="Tas + Surat - Surat" @if($ditemukan->jenis_barang == "Tas + Surat - Surat") selected @endif>Tas + Surat - Surat</option>
     			<option value="Handphone" @if($ditemukan->jenis_barang == "Handphone") selected @endif>Handphone</option>
     			<option value="Laptop" @if($ditemukan->jenis_barang == "Laptop") selected @endif>Laptop</option>

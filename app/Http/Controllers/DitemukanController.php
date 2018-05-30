@@ -118,7 +118,7 @@ class DitemukanController extends Controller
      */
     public function destroy($id)
     {
-        $ditemukan = \App\ditemukan::find($id);
+        $ditemukan = \App\Ditemukan::find($id);
         $ditemukan->delete();
         return redirect('ditemukan')->with('success','Data Berhasil Di Hapus');
     }
