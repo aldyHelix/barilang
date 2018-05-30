@@ -28,3 +28,8 @@ Route::resource('dicuri','DicuriController');
 Route::resource('berita','BeritaController');
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/front/berita', 'FrontBeritaController@index');
+Route::get('/front/dicuri', 'FrontDicuriController@index');
+Route::get('/front/ditemukan', 'FrontDitemukanController@index');
+Route::get('/front/kehilangan', 'FrontKehilanganController@index');

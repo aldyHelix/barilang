@@ -44,12 +44,13 @@
               	<tr>
               		<td>{{$berita['id']}}</td>
               		<td>{{$berita['nama_berita']}}</td>
+                  <td>{{$berita['jenis_berita']}}</td>
               		<td>{{$tgl_berita}}</td>
 					<td><img src="{{url('images/', $berita['file_gambar'])}}" width="10%" height="10%"></td>
               		<td>{{$berita['deskripsi']}}</td>
-              		<td><a href="{{action('BeritaController@edit', $dicuri['id'])}}" class="btn btn-warning">Edit</a></td>
+              		<td><a href="{{action('BeritaController@edit', $berita['id'])}}" class="btn btn-warning">Edit</a></td>
               		<td>
-          				<form action="{{action('BeritaController@destroy', $dicuri['id'])}}" method="post">
+          				<form action="{{action('BeritaController@destroy', $berita['id'])}}" method="post">
             			@csrf
            					<input name="_method" type="hidden" value="DELETE">
             				<button class="btn btn-danger" type="submit">Delete</button>

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Barilang'),
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
 
 
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*
