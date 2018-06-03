@@ -43,6 +43,7 @@
 
             .content {
                 text-align: center;
+                color: black;
             }
 
             .title {
@@ -62,6 +63,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .p{
+                font-size: 20px;
+            }
         </style>
     </head>
     <body>
@@ -76,20 +80,42 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    <h2>Bar</h2><h2><i>Ilang</i></h2>
+                    <h2><b>Bar</b>Ilang</h2>
                     Barang Hilang
+                </div>
+                <div>
+                    <p>
+                        temukan barang hilangmu disini.
+                        posting juga barang temuanmu disini.
+                    </p>
+                    <br>
+                    <br>
+                    <br>
                 </div>
 
                 <div class="links">
-                    <a href="">Barang Dicuri</a>
-                    <a href="">Barang Hilang</a>
-                    <a href="">Barang Ditemukan</a>
-                    <a href="">Berita</a>
+                    <a href="{{url('front/dicuri')}}">Barang Dicuri</a>
+                    <a href="{{url('front/kehilangan')}}">Barang Hilang</a>
+                    <a href="{{url('front/ditemukan')}}">Barang Ditemukan</a>
+                    <a href="{{url('front/berita')}}">Berita</a>
+                </div>
+
+                <div>
+                    <br>
+                    <br>
                 </div>
             </div>
+
         </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.1
+            </div>
+            <strong>Copyright &copy; 2018 <a href="#"></a>.</strong> All rights
+    reserved.
+  </footer>
     </body>
 </html>

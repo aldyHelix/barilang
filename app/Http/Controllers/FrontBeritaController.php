@@ -9,6 +9,7 @@ class FrontBeritaController extends Controller
     public function index()
     {
     	$berita = \App\Berita::all();
-        return view('front.depanberita', compact('berita'));
+    	$pencurian = \App\Dicuri::all();
+        return view('front.depanberita', compact('berita','pencurian'));
     }
 }
